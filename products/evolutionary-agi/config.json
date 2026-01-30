@@ -1,0 +1,37 @@
+{
+  "platform_config": {
+    "name": "Evolutionary NAS Platform",
+    "version": "1.0.0"
+  },
+  "nas_config": {
+    "population_size": 50,
+    "generations": 100,
+    "mutation_rate": 0.15,
+    "crossover_rate": 0.8
+  },
+  "modules": {
+    "perception": {
+      "enabled": true,
+      "input_size": 1024,
+      "output_size": 512,
+      "modalities": ["vision", "audio", "text"]
+    },
+    "world_model": {
+      "enabled": true,
+      "memory_size": 50,
+      "prediction_horizon": 5
+    },
+    "reasoning": {
+      "enabled": true,
+      "trace_history_size": 100
+    },
+    "action": {
+      "enabled": true,
+      "confidence_threshold": 0.5
+    }
+  },
+  "ethics_config": {
+    "enable_governance": true,
+    "policies_enabled": ["harm", "privacy", "fairness", "transparency"]
+  }
+}
